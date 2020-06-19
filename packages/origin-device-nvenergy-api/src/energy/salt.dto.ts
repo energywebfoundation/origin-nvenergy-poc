@@ -1,3 +1,4 @@
 export class SaltDTO {
-  constructor(readonly id: number, readonly salt: string) {}
+  id: number;
+  salt: string;
 }

@@ -6,7 +6,6 @@ import {
 } from "@nestjs/common";
 import { SmartMeterReadDTO } from "./smart-meter-read.dto";
 import { ethers, utils } from "ethers";
-import { SaltDTO } from "./salt.dto";
 import { SmartMeterReadsRegistryFactory } from "@energyweb/origin-device-nvenergy/dist/src/ethers/SmartMeterReadsRegistryFactory";
 
 @Injectable()
@@ -51,11 +50,11 @@ export class EnergyService {
 
     const id = this.salt.push(hex);
 
-    return new SaltDTO(id - 1, hex);
+    return { id: id - 1, salt: hex };
   }
 
   private createMessage(payload: SmartMeterReadDTO) {
-    return `${payload.saltId};${payload.energy};${payload.transactionHash}`;
+    return `${payload.saltId};${payload.meterRead};${payload.transactionHash}`;
   }
 
   private async smartMeterReadHashFromTransaction(transactionHash: string) {
@@ -73,6 +72,6 @@ export class EnergyService {
   private calculateLocalHash(payload: SmartMeterReadDTO) {
     const salt = this.salt[payload.saltId];
 
-    return utils.keccak256(`${salt}${payload.energy}`);
+    return utils.keccak256(`${salt}${payload.meterRead}`);
   }
 }

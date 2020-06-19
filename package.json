@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "lerna run start --stream",
     "build": "lerna run build --stream",
     "test:e2e": "lerna run test:e2e --stream"
   }

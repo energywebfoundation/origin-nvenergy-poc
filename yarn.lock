@@ -1194,6 +1194,11 @@
     tslib "1.11.1"
     uuid "7.0.1"
 
+"@nestjs/mapped-types@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-0.0.5.tgz#0c3462de4125eea0e85e3a520f0de4e7e8dcfa40"
+  integrity sha512-QjZCSMHHy8IW4UUTS49QJQ0NrA8MHv6XevNrPLJwh4n3lN7wY9aSRwd1+cBIUDBXEHRKngcYdPtC4oG0fimw+A==
+
 "@nestjs/platform-express@^6.10.14":
   version "6.11.11"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.11.11.tgz#d30ea1f39299e92e080553e893a0afac54f20c6e"
@@ -1213,6 +1218,15 @@
     "@angular-devkit/core" "7.3.8"
     "@angular-devkit/schematics" "7.3.8"
     fs-extra "8.1.0"
+
+"@nestjs/swagger@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.5.10.tgz#21df634eeaf425a832ff6ba97b573122ba0e258d"
+  integrity sha512-CfxnOv1ngt5KQr8aG1aPBr/HPj6MIfQjRdPdTbL+xQTZpmBnTqkyMG6QhK29HjUscB99/HJyOy9lYmOs70LpPA==
+  dependencies:
+    "@nestjs/mapped-types" "0.0.5"
+    lodash "4.17.15"
+    path-to-regexp "3.2.0"
 
 "@nestjs/testing@^6.10.14":
   version "6.11.11"
@@ -8502,7 +8516,7 @@ lodash@4.17.14:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
-lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.1:
+lodash@4.17.15, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.1:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -11859,6 +11873,18 @@ sver-compat@^1.5.0:
   dependencies:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
+
+swagger-ui-dist@^3.18.1:
+  version "3.27.0"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-3.27.0.tgz#9d0ff14a96cd8ede12af521908299fa31f71ce2e"
+  integrity sha512-dlbH4L8+UslXVeYvCulicmJP2cnHLoabQGfeav5lx74fM+tMQW53M8iqpH5wbBqBbFkZwza+IIWoPrenqO/F2g==
+
+swagger-ui-express@^4.1.4:
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.1.4.tgz#8b814ad998b850a1cf90e71808d6d0a8a8daf742"
+  integrity sha512-Ea96ecpC+Iq9GUqkeD/LFR32xSs8gYqmTW1gXCuKg81c26WV6ZC2FsBSPVExQP6WkyUuz5HEiR0sEv/HCC343g==
+  dependencies:
+    swagger-ui-dist "^3.18.1"
 
 swarm-js@0.1.39:
   version "0.1.39"

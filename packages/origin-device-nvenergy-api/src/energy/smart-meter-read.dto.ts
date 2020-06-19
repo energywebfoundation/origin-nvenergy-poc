@@ -1,7 +1,7 @@
 export class SmartMeterReadDTO {
   public saltId: number;
 
-  public energy: string;
+  public meterRead: string;
 
   public meterAddress: string;
 

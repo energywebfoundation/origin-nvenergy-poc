@@ -29,7 +29,7 @@ describe("AppController (e2e)", () => {
     let saltInfo: SaltDTO;
 
     await request(app.getHttpServer())
-      .get("/energy/salt")
+      .get("/meter-read/salt")
       .expect(200)
       .expect((res) => (saltInfo = res.body as SaltDTO));
 
@@ -90,7 +90,7 @@ describe("AppController (e2e)", () => {
     );
 
     const payload: SmartMeterReadDTO = {
-      energy,
+      meterRead: energy,
       meterAddress,
       saltId,
       transactionHash,
@@ -98,7 +98,7 @@ describe("AppController (e2e)", () => {
     };
 
     await request(app.getHttpServer())
-      .post("/energy/")
+      .post("/meter-read")
       .send(payload)
       .expect(201);
   });
