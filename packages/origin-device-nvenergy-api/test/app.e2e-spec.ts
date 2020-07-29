@@ -68,7 +68,7 @@ describe("AppController (e2e)", () => {
     return transaction.hash;
   };
 
-  it("should store smart contract read", async () => {
+  it("should store and read smart contract read", async () => {
     const { id: saltId, salt } = await fetchSalt();
 
     const {
@@ -97,9 +97,25 @@ describe("AppController (e2e)", () => {
       signature,
     };
 
-    await request(app.getHttpServer())
+    const server = app.getHttpServer();
+
+    await request(server)
       .post("/meter-read")
       .send(payload)
       .expect(201);
+
+    const start = moment()
+      .add(-1, "day")
+      .toISOString();
+    const end = moment().toISOString();
+
+    await request(server)
+      .get(`/meter-read/${meterAddress}?start=${start}&end=${end}`)
+      .expect(200)
+      .expect((res) => {
+        const [[timestamp, value]] = res.body as string[][];
+
+        expect(value).toBe(energy);
+      });
   });
 });

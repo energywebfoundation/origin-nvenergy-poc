@@ -1,16 +1,29 @@
-import { Controller, Post, Body, Get } from "@nestjs/common";
-import { SmartMeterReadDTO } from "./smart-meter-read.dto";
+import { ReadsService } from "@energyweb/energy-api";
+import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import {
+  ApiUnauthorizedResponse,
+  ApiUnprocessableEntityResponse,
+} from "@nestjs/swagger";
+
 import { EnergyService } from "./energy.service";
 import { SaltDTO } from "./salt.dto";
-import { ApiUnauthorizedResponse, ApiUnprocessableEntityResponse } from "@nestjs/swagger";
+import { SmartMeterReadDTO } from "./smart-meter-read.dto";
+import { ReadsQueryDTO } from "@energyweb/energy-api";
 
 @Controller("meter-read")
 export class EnergyController {
-  constructor(private readonly energyService: EnergyService) {}
+  constructor(
+    private readonly energyService: EnergyService,
+    private readonly readsService: ReadsService
+  ) {}
 
   @Post()
-  @ApiUnauthorizedResponse({description: "Signature address does not match payload address"})
-  @ApiUnprocessableEntityResponse({description: "Unable to verify the payload"})
+  @ApiUnauthorizedResponse({
+    description: "Signature address does not match payload address",
+  })
+  @ApiUnprocessableEntityResponse({
+    description: "Unable to verify the payload",
+  })
   public async store(@Body() smartMeterRead: SmartMeterReadDTO) {
     await this.energyService.store(smartMeterRead);
   }
@@ -18,5 +31,23 @@ export class EnergyController {
   @Get("/salt")
   public generateSalt(): SaltDTO {
     return this.energyService.generateSalt();
+  }
+
+  @Get("/:meter")
+  public async getReads(
+    @Param("meter") meterId: string,
+    @Query() filter: ReadsQueryDTO
+  ) {
+    const res = await this.readsService.find(meterId, filter);
+    return res;
+  }
+
+  @Get("/:meter/difference")
+  public async getReadsDifference(
+    @Param("meter") meterId: string,
+    @Query() filter: ReadsQueryDTO
+  ) {
+    const res = await this.readsService.findDifference(meterId, filter);
+    return res;
   }
 }

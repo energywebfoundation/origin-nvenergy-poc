@@ -7,6 +7,7 @@ import {
 import { SmartMeterReadDTO } from "./smart-meter-read.dto";
 import { ethers, utils } from "ethers";
 import { SmartMeterReadsRegistryFactory } from "@energyweb/origin-device-nvenergy/dist/src/ethers/SmartMeterReadsRegistryFactory";
+import { ReadsService, Unit } from "@energyweb/energy-api";
 
 @Injectable()
 export class EnergyService {
@@ -14,7 +15,7 @@ export class EnergyService {
   private web3ProviderUrl: string;
   private salt: string[] = [];
 
-  constructor() {
+  constructor(private readonly readsService: ReadsService) {
     this.web3ProviderUrl = process.env.WEB3 || "http://localhost:8545";
   }
 
@@ -25,8 +26,6 @@ export class EnergyService {
       signatureMessage,
       payload.signature
     );
-
-    console.log(payload.transactionHash);
 
     if (recoveredAddress !== ethers.utils.getAddress(payload.meterAddress)) {
       throw new UnauthorizedException(
@@ -42,6 +41,11 @@ export class EnergyService {
     if (onChainHash !== localHash) {
       throw new UnprocessableEntityException();
     }
+
+    await this.readsService.store(payload.meterAddress, {
+      unit: Unit.Wh,
+      reads: [{ timestamp: new Date(), value: parseInt(payload.meterRead) }],
+    });
   }
 
   public generateSalt() {

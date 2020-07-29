@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "@energyweb/origin-device-nvenergy": "1.0.0",
+    "@energyweb/energy-api": "0.0.3",
     "@nestjs/common": "^6.10.14",
+    "@nestjs/config": "0.5.0",
     "@nestjs/core": "^6.10.14",
     "@nestjs/platform-express": "^6.10.14",
     "@nestjs/swagger": "^4.5.10",
