@@ -10,7 +10,7 @@ import request from "supertest";
 import { AppModule } from "./../src/app.module";
 import { SmartMeterReadsRegistry } from "@energyweb/origin-device-nvenergy/dist/src/ethers/SmartMeterReadsRegistry";
 
-const ganache = require("ganache-core");
+const ganache = require("ganache-core"); // eslint-disable-line @typescript-eslint/no-var-requires
 ganache.server().listen(8545);
 
 describe("AppController (e2e)", () => {
@@ -113,7 +113,7 @@ describe("AppController (e2e)", () => {
       .get(`/meter-read/${meterAddress}?start=${start}&end=${end}`)
       .expect(200)
       .expect((res) => {
-        const [[timestamp, value]] = res.body as string[][];
+        const [[, value]] = res.body as string[][];
 
         expect(value).toBe(energy);
       });
