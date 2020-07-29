@@ -3,6 +3,7 @@ import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
 import {
   ApiUnauthorizedResponse,
   ApiUnprocessableEntityResponse,
+  ApiQuery,
 } from "@nestjs/swagger";
 
 import { EnergyService } from "./energy.service";
@@ -34,6 +35,7 @@ export class EnergyController {
   }
 
   @Get("/:meter")
+  @ApiQuery({ name: "filter", type: () => ReadsQueryDTO })
   public async getReads(
     @Param("meter") meterId: string,
     @Query() filter: ReadsQueryDTO
