@@ -13,11 +13,11 @@
     "typechain:ethers": "typechain --target ethers --outDir src/ethers './build/contracts/SmartMeterReadsRegistry.json'"
   },
   "devDependencies": {
-    "truffle": "^5.1.30",
-    "ts-node": "^8.10.2",
-    "typechain": "^2.0.0",
-    "typechain-target-ethers": "^1.0.4",
-    "typescript": "^3.9.5"
+    "truffle": "5.1.30",
+    "ts-node": "8.10.2",
+    "typechain": "2.0.0",
+    "typechain-target-ethers": "1.0.4",
+    "typescript": "3.9.5"
   },
   "dependencies": {
     "ethers": "4.0.47",
