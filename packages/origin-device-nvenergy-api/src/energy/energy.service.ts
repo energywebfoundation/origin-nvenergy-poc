@@ -6,7 +6,7 @@ import {
 } from "@nestjs/common";
 import { SmartMeterReadDTO } from "./smart-meter-read.dto";
 import { ethers, utils } from "ethers";
-import { SmartMeterReadsRegistryFactory } from "@energyweb/origin-device-nvenergy/dist/src/ethers/SmartMeterReadsRegistryFactory";
+import { ethers as ethersContract } from "@energyweb/origin-device-nvenergy";
 import { ReadsService, Unit } from "@energyweb/energy-api";
 
 @Injectable()
@@ -65,7 +65,7 @@ export class EnergyService {
     const provider = new ethers.providers.JsonRpcProvider(this.web3ProviderUrl);
     const transaction = await provider.getTransactionReceipt(transactionHash);
 
-    const registry = new SmartMeterReadsRegistryFactory(
+    const registry = new ethersContract.SmartMeterReadsRegistryFactory(
       provider.getSigner()
     ).attach(transaction.to);
     const logs = registry.interface.parseLog(transaction.logs[0]);
