@@ -1,15 +1,16 @@
-import { ReadsService } from "@energyweb/energy-api";
+import { ReadsService, FilterDTO } from "@energyweb/energy-api";
 import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
 import {
   ApiUnauthorizedResponse,
   ApiUnprocessableEntityResponse,
   ApiQuery,
+  ApiResponse,
+  ApiProperty,
 } from "@nestjs/swagger";
 
 import { EnergyService } from "./energy.service";
 import { SaltDTO } from "./salt.dto";
 import { SmartMeterReadDTO } from "./smart-meter-read.dto";
-import { ReadsQueryDTO } from "@energyweb/energy-api";
 
 @Controller("meter-read")
 export class EnergyController {
@@ -35,10 +36,9 @@ export class EnergyController {
   }
 
   @Get("/:meter")
-  @ApiQuery({ name: "filter", type: () => ReadsQueryDTO })
   public async getReads(
     @Param("meter") meterId: string,
-    @Query() filter: ReadsQueryDTO
+    @Query() filter: FilterDTO
   ) {
     const res = await this.readsService.find(meterId, filter);
     return res;
@@ -47,7 +47,7 @@ export class EnergyController {
   @Get("/:meter/difference")
   public async getReadsDifference(
     @Param("meter") meterId: string,
-    @Query() filter: ReadsQueryDTO
+    @Query() filter: FilterDTO
   ) {
     const res = await this.readsService.findDifference(meterId, filter);
     return res;

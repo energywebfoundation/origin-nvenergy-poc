@@ -20,24 +20,24 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@energyweb/energy-api": "0.1.0",
     "@energyweb/origin-device-nvenergy": "1.0.0",
-    "@energyweb/energy-api": "0.0.3",
-    "@nestjs/common": "^6.10.14",
+    "@nestjs/common": "7.4.2",
     "@nestjs/config": "0.5.0",
-    "@nestjs/core": "^6.10.14",
-    "@nestjs/platform-express": "^6.10.14",
-    "@nestjs/swagger": "^4.5.10",
+    "@nestjs/core": "7.4.2",
+    "@nestjs/platform-express": "7.4.2",
+    "@nestjs/swagger": "4.5.12",
     "ethers": "4.0.47",
     "moment": "^2.26.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.4",
-    "swagger-ui-express": "^4.1.4"
+    "swagger-ui-express": "4.1.4"
   },
   "devDependencies": {
-    "@nestjs/cli": "^6.13.2",
-    "@nestjs/schematics": "^6.8.1",
-    "@nestjs/testing": "^6.10.14",
+    "@nestjs/cli": "7.4.1",
+    "@nestjs/schematics": "7.0.1",
+    "@nestjs/testing": "7.4.2",
     "@types/express": "^4.17.2",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.6",

@@ -11,6 +11,10 @@ Minimal repository for on-chain reads registry and Origin Energy API for NVEnerg
 
 ## How to use
 
+Make sure InfluxDB is running, for more details refer to https://github.com/energywebfoundation/energy-api#influx-db-installation
+
+Setup the `.env` file with INFLUX DB required items, for more details refer to https://github.com/energywebfoundation/energy-api#configuration
+
 ```
 yarn
 yarn build
