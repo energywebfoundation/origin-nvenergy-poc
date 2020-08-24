@@ -27,7 +27,7 @@
     "@nestjs/core": "7.4.2",
     "@nestjs/platform-express": "7.4.2",
     "@nestjs/swagger": "4.5.12",
-    "ethers": "4.0.47",
+    "ethers": "5.0.8",
     "moment": "^2.26.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
