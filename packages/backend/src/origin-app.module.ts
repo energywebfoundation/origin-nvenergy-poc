@@ -1,5 +1,5 @@
 import { AppModule as ExchangeModule, entities as ExchangeEntities } from '@energyweb/exchange';
-import { AppModule as NVEnergyModule } from '../origin-device-nvenergy-api';
+import { AppModule as NVEnergyModule } from '@energyweb/origin-device-nvenergy-api';
 import {
     AppModule as OriginBackendModule,
     entities as OriginBackendEntities
