@@ -1,0 +1,39 @@
+{
+    "private": true,
+    "name": "@ptt-origin/backend",
+    "version": "0.0.1",
+    "main": "dist/js/src/index.js",
+    "scripts": {
+        "start": "nest start -p tsconfig.json",
+        "start:dev": "nest start --watch -p tsconfig.json",
+        "start:debug": "nest start --debug --watch -p tsconfig.json",
+        "start:prod": "node dist/main",
+        "prebuild": "shx rm -rf dist",
+        "build": "yarn build:ts",
+        "build:ts": "tsc -b tsconfig.json && nest build -p tsconfig.json --tsc",
+        "build:containers": "make build",
+        "clean": "shx rm -rf dist db.sqlite",
+        "deploy:heroku": "make build deploy-heroku"
+    },
+    "bin": {
+        "ptt-backend": "./bin/ptt-backend"
+    },
+    "author": "EnergyWeb DevHub GmbH; Joseph Bagaric, joseph.bagaric@energyweb.org;",
+    "dependencies": {
+        "@energyweb/exchange": "1.5.3",
+        "@energyweb/migrations": "3.1.10",
+        "@energyweb/origin-backend": "7.0.2",
+        "@energyweb/origin-backend-core": "5.1.0",
+        "@nestjs/cli": "7.4.1",
+        "@nestjs/common": "7.4.2",
+        "@nestjs/config": "0.5.0",
+        "@nestjs/core": "7.4.2",
+        "@nestjs/typeorm": "7.1.0",
+        "axios": "0.19.2",
+        "class-validator": "0.12.2",
+        "ethers": "5.0.8",
+        "moment": "2.27.0",
+        "socks-proxy-agent": "^5.0.0",
+        "ts-node": "8.10.2"
+    }
+}
