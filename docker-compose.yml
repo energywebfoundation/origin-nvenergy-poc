@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  influx:
+    image: influxdb:1.8
+    container_name: nvenergy_influx
+    ports:
+      - 8086:8086
