@@ -1,8 +1,18 @@
 {
-    "compilerOptions": {
-        "composite": true,
-        "rootDir": "./",
-        "outDir": "./dist"
-    },
-    "include": ["./src/**/*"]
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["mocha"]
+  },
+  "exclude": ["node_modules", "dist"]
 }

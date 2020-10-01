@@ -1,10 +1,18 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-      "composite": true,
-      "outDir": "./dist/js",
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "types": ["mocha", "node"]
   },
-  "include": ["src/**/*"]
+  "exclude": ["node_modules", "dist"]
 }
