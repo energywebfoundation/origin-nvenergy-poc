@@ -10,7 +10,7 @@
     "start:prod": "node dist/main",
     "prebuild": "shx rm -rf dist",
     "build": "yarn build:ts",
-    "build:ts": "tsc -b tsconfig.json && nest build -p tsconfig.json --tsc",
+    "build:ts": "tsc -b tsconfig.json",
     "build:containers": "make build",
     "clean": "shx rm -rf dist db.sqlite",
     "deploy:heroku": "make build deploy-heroku"
@@ -24,6 +24,7 @@
     "@energyweb/migrations": "3.1.10",
     "@energyweb/origin-backend": "7.0.2",
     "@energyweb/origin-backend-core": "5.1.0",
+    "@energyweb/origin-device-nvenergy-api": "0.0.1",
     "@nestjs/common": "7.4.2",
     "@nestjs/config": "0.5.0",
     "@nestjs/core": "7.4.2",
