@@ -22,10 +22,10 @@
   "dependencies": {
     "@energyweb/energy-api": "0.1.0",
     "@energyweb/origin-device-nvenergy": "1.0.0",
-    "@nestjs/common": "7.4.4",
+    "@nestjs/common": "7.4.2",
     "@nestjs/config": "0.5.0",
-    "@nestjs/core": "7.4.4",
-    "@nestjs/platform-express": "7.4.4",
+    "@nestjs/core": "7.4.2",
+    "@nestjs/platform-express": "7.4.2",
     "@nestjs/swagger": "4.6.1",
     "ethers": "4.0.48",
     "moment": "2.29.0",
