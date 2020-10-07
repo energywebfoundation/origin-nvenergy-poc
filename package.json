@@ -13,8 +13,5 @@
     "build": "lerna run build --stream",
     "test:e2e": "lerna run test:e2e --stream",
     "lint": "lerna run lint --stream"
-  },
-  "resolutions": {
-    "@types/react": "16.9.49"
   }
 }

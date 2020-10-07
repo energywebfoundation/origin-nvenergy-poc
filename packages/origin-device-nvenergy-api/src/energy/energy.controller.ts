@@ -3,9 +3,6 @@ import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
 import {
   ApiUnauthorizedResponse,
   ApiUnprocessableEntityResponse,
-  ApiQuery,
-  ApiResponse,
-  ApiProperty,
 } from "@nestjs/swagger";
 
 import { EnergyService } from "./energy.service";
