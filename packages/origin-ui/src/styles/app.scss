@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+@import '@energyweb/origin-ui-core/dist/src/styles/app.scss';
+
+.ptt-logo {
+    max-width: 210px;
+}
+
+.hero-bg {
+    background: url('../../assets/background-body2.jpg');
+    background-size: cover;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.25;
+}
