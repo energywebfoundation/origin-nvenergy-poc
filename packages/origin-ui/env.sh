@@ -10,12 +10,8 @@ REQUIRED_VARIABLES=(
   ISSUER_ID
 )
 
-# Recreate config file
-rm -rf ./env-config.js
-touch ./env-config.js
-
-# Add assignment
-echo "{" >> ./env-config.js
+# Recreate config file and add assignment
+echo "{" > ./env-config.js
 
 envToRead=.env
 rootEnvFile=../../.env

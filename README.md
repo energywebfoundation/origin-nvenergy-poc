@@ -21,6 +21,12 @@ yarn build
 yarn test:e2e
 ```
 
+## Start influxdb
+
+```
+docker-compose up
+```
+
 ### SmartMeterReadsRegistry ABI
 
 `packages/origin-device-nvenergy/build/contracts/SmartMeterReadsRegistry.json`
