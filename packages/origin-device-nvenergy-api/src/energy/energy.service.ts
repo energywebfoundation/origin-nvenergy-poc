@@ -48,6 +48,11 @@ export class EnergyService {
     });
   }
 
+  public getSalt(salt: string) {
+    const id = this.salt.indexOf(salt)
+    return id !== -1 ? { id, salt } : undefined
+  }
+
   public generateSalt() {
     const bytes = ethers.utils.randomBytes(16);
     const hex = ethers.utils.hexlify(bytes);

@@ -1,5 +1,5 @@
 import { ReadsService, FilterDTO } from "@energyweb/energy-api";
-import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import { Body, Controller, Get, Param, Post, Query, HttpException, HttpStatus } from "@nestjs/common";
 import {
   ApiUnauthorizedResponse,
   ApiUnprocessableEntityResponse,
@@ -33,6 +33,15 @@ export class EnergyController {
   @Get("/salt")
   public generateSalt(): SaltDTO {
     return this.energyService.generateSalt();
+  }
+
+  @Get("/salt/:salt")
+  public getSalt(
+    @Param("salt") salt: string
+    ): SaltDTO {
+    const res = this.energyService.getSalt(salt)
+    if (!res) throw new HttpException('Not Found', HttpStatus.NOT_FOUND)
+    return res
   }
 
   @Get("/:meter")
