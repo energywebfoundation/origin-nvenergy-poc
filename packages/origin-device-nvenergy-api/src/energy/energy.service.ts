@@ -22,10 +22,15 @@ export class EnergyService {
   public async store(payload: SmartMeterReadDTO) {
     const signatureMessage = this.createMessage(payload);
 
-    const recoveredAddress = ethers.utils.verifyMessage(
-      signatureMessage,
-      payload.signature
-    );
+    let recoveredAddress;
+    try {
+      recoveredAddress = ethers.utils.verifyMessage(
+        signatureMessage,
+        payload.signature
+      );
+    } catch (error) {
+      throw new UnprocessableEntityException(error.message);
+    }
 
     if (recoveredAddress !== ethers.utils.getAddress(payload.meterAddress)) {
       throw new UnauthorizedException(

@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  influx:
+    image: influxdb:1.8
+    container_name: nvenergy_influx
+    ports:
+      - 8086:8086
+    volumes:
+      - $PWD/influxdb-local:/var/lib/influxdb
+      - $PWD/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+
+# env variables from a file called .env are applied automatically,
+# see https://docs.docker.com/compose/environment-variables/

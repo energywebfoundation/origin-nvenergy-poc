@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-        "composite": true,
-        "rootDir": "./",
-        "outDir": "./dist"
-    },
-    "include": ["./src/**/*"]
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./",
+    "outDir": "./dist",
+    "skipLibCheck": true
+  },
+  "include": ["./src/**/*"]
 }
