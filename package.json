@@ -3,7 +3,7 @@
   "private": true,
   "devDependencies": {
     "lerna": "3.22.1",
-    "@types/mocha": "8.0.0"
+    "@types/mocha": "8.0.3"
   },
   "workspaces": [
     "packages/*"
