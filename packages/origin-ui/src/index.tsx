@@ -12,10 +12,10 @@ import {
 
 import "./styles/app.scss";
 import variables from "./styles/variables.scss";
-import pttLogo from "../assets/logo-ptt.png";
+import nvtrecLogo from "../assets/logo-nvtrec.svg";
 
 const originConfiguration = createOriginConfiguration({
-  logo: <img src={pttLogo} className="ptt-logo" />,
+  logo: <img src={nvtrecLogo} className="nvtrec-logo" />,
   styleConfig: createStyleConfigFromSCSSVariables(variables)
 });
 
