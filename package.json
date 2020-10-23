@@ -12,6 +12,7 @@
     "start": "lerna run start --stream",
     "build": "lerna run build --stream",
     "test:e2e": "lerna run test:e2e --stream",
-    "lint": "lerna run lint --stream"
+    "lint": "lerna run lint --stream",
+    "run:ganache": "ganache-cli -d -m habit sure critic toe surprise all tuition sister clay make steak bronze"
   }
 }

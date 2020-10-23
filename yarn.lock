@@ -2919,10 +2919,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.2.tgz#2de1ed6670439387da1c9f549a2ade2b0a799256"
   integrity sha512-jiE3QIxJ8JLNcb1Ps6rDbysDhN4xa8DJJvuC9prr6w+1tIh+QAbYyNF3tyiZNLDBIuBCf4KEcV2UvQm/V60xfA==
 
-"@types/node@13.13.25":
-  version "13.13.25"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.25.tgz#768d6712b15099a744812a92b84ffde8f4e13cf1"
-  integrity sha512-6ZMK4xRcF2XrPdKmPYQxZkdHKV18xKgUFVvhIgw2iwaaO6weleLPHLBGPZmLhjo+m1N+MZXRAoBEBCCVqgO2zQ==
+"@types/node@13.13.26":
+  version "13.13.26"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.26.tgz#09b8326828d46b174d29086cdb6dcd2d0dcf67a3"
+  integrity sha512-+48LLqolaKj/WnIY1crfLseaGQMIDISBy3PTXVOZ7w/PBaRUv+H8t94++atzfoBAvorbUYz6Xq9vh1fHrg33ig==
 
 "@types/node@^12.12.31":
   version "12.12.62"
@@ -6961,10 +6961,10 @@ eslint-config-airbnb-base@14.2.0:
     object.assign "^4.1.0"
     object.entries "^1.1.2"
 
-eslint-config-prettier@6.12.0:
-  version "6.12.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.12.0.tgz#9eb2bccff727db1c52104f0b49e87ea46605a0d2"
-  integrity sha512-9jWPlFlgNwRUYVoujvWTQ1aMO8o6648r+K7qU7K5Jmkbyqav1fuEZC0COYpGBxyiAJb65Ra9hrmFx19xRGwXWw==
+eslint-config-prettier@6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.13.0.tgz#207d88796b5624e5bb815bbbdfc5891ceb9ebffa"
+  integrity sha512-LcT0i0LSmnzqK2t764pyIt7kKH2AuuqKRTtJTdddWxOiUja9HdG5GXBVF2gmCTvVYWVsTu8J2MhJLVGRh+pj8w==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -16154,10 +16154,10 @@ triple-beam@^1.2.0, triple-beam@^1.3.0:
   dependencies:
     glob "^7.1.2"
 
-truffle@5.1.48:
-  version "5.1.48"
-  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.48.tgz#43c78cb1fa8f51496a66de7bddfd6726ad132676"
-  integrity sha512-Z8485qH5Db8P05dVy7SHQHcaa+hXAekvPcVkkv8zONsVBqOmS3q48eajukdeKNbLlfPWb3m7TYdPzrGFBDcFiQ==
+truffle@5.1.49:
+  version "5.1.49"
+  resolved "https://registry.yarnpkg.com/truffle/-/truffle-5.1.49.tgz#c9edc95192047ff4d170fcad235d26d0c4545de5"
+  integrity sha512-SkCfYRPhruowxH+qpJBAvM0u5+j/LK51U85ErXeiuRhyCNEWMNjUtISHTlEZ0KLr0Kki68iXk+o2UekN4Nlp5g==
   dependencies:
     app-module-path "^2.2.0"
     mocha "8.1.2"
