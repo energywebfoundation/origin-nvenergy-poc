@@ -25,6 +25,21 @@ npm i -g pnpm
 ```
 rush install
 rush build
+```
+
+Create DB
+```
+psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE origin_nv"
+```
+
+Run ganache and migrations
+```
+rush start:ganache
+rush migrate:dev
+```
+
+Run UI and API projects
+```
 rush start:dev
 ```
 
