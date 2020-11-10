@@ -7,16 +7,22 @@ import {
   Origin,
   OriginConfigurationProvider,
   createOriginConfiguration,
-  createStyleConfigFromSCSSVariables
+  createStyleConfigFromSCSSVariables,
 } from "@energyweb/origin-ui-core";
+
+import { allOriginFeatures, OriginFeature } from "@energyweb/utils-general";
 
 import "./styles/app.scss";
 import variables from "./styles/variables.scss";
 import nvtrecLogo from "../assets/logo-nvtrec.svg";
 
 const originConfiguration = createOriginConfiguration({
+  enabledFeatures: allOriginFeatures.filter(
+    (feature) =>
+      feature !== OriginFeature.IRec && feature !== OriginFeature.IRecConnect
+  ),
   logo: <img src={nvtrecLogo} className="nvtrec-logo" />,
-  styleConfig: createStyleConfigFromSCSSVariables(variables)
+  styleConfig: createStyleConfigFromSCSSVariables(variables),
 });
 
 render(

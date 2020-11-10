@@ -8,6 +8,7 @@ import { SmartMeterReadDTO } from "./smart-meter-read.dto";
 import { ethers, utils } from "ethers";
 import { ethers as ethersContract } from "@energyweb/origin-device-nvenergy";
 import { ReadsService, Unit } from "@energyweb/energy-api";
+import { ConfigService } from "@nestjs/config";
 
 @Injectable()
 export class EnergyService {
@@ -15,8 +16,14 @@ export class EnergyService {
   private web3ProviderUrl: string;
   private salt: string[] = [];
 
-  constructor(private readonly readsService: ReadsService) {
-    this.web3ProviderUrl = process.env.WEB3 || "http://localhost:8545";
+  constructor(
+    private readonly readsService: ReadsService,
+    readonly configService: ConfigService
+  ) {
+    this.web3ProviderUrl =
+      configService.get<string>("WEB3") || "http://localhost:8545";
+
+    this.logger.debug(this.web3ProviderUrl);
   }
 
   public async store(payload: SmartMeterReadDTO) {

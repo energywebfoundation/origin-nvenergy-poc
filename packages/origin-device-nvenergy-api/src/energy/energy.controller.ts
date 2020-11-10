@@ -1,5 +1,14 @@
 import { ReadsService, FilterDTO } from "@energyweb/energy-api";
-import { Body, Controller, Get, Param, Post, Query } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Query,
+  UsePipes,
+  ValidationPipe,
+} from "@nestjs/common";
 import {
   ApiUnauthorizedResponse,
   ApiUnprocessableEntityResponse,
@@ -10,6 +19,7 @@ import { SaltDTO } from "./salt.dto";
 import { SmartMeterReadDTO } from "./smart-meter-read.dto";
 
 @Controller("meter-read")
+@UsePipes(ValidationPipe)
 export class EnergyController {
   constructor(
     private readonly energyService: EnergyService,

@@ -2,13 +2,13 @@ PROJECT				= nvenergy-backend-app
 
 NAME   				= energyweb/${PROJECT}
 LATEST 				= ${NAME}:latest
-PACKAGE				= nvenergy-origin-backend.tgz
 
 build:
 	@rm -rf ./deployment
 	@mkdir ./deployment
 	@rush deploy -p @energyweb/nvenergy-backend-app -t ./deployment --overwrite
 	@cp -r ../../config/migrations/ ./deployment/config
+	@docker rmi ${LATEST} -f
 	@docker build -t ${NAME} -f Dockerfile ./deployment
 	@rm -rf ./deployment
 	@docker tag ${NAME} ${LATEST}
