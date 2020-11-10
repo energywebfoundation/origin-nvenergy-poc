@@ -15,10 +15,16 @@ Make sure InfluxDB is running, for more details refer to https://github.com/ener
 
 Setup the `.env` file with INFLUX DB required items, for more details refer to https://github.com/energywebfoundation/energy-api#configuration
 
+Install `rush` and `pnpm` if you don't have it:
+
 ```
-yarn
-yarn build
-yarn test:e2e
+npm i -g rush
+npm i -g pnpm
+```
+
+```
+rush install
+rush build
 ```
 
 ## Start influxdb
