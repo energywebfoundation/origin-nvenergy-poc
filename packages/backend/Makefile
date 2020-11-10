@@ -1,15 +1,16 @@
-PROJECT				= ptt-origin-backend-app
+PROJECT				= nvenergy-backend-app
 
 NAME   				= energyweb/${PROJECT}
 LATEST 				= ${NAME}:latest
-PACKAGE				= ptt-origin-backend.tgz
 
 build:
-	@yarn pack -f ${PACKAGE}
-	@cp -r ../../config/migrations/ config
-	@docker build -t ${NAME} --build-arg PACKAGE=${PACKAGE} .
-	@rm ${PACKAGE}
-	@rm -rf config
+	@rm -rf ./deployment
+	@mkdir ./deployment
+	@rush deploy -p @energyweb/nvenergy-backend-app -t ./deployment --overwrite
+	@cp -r ../../config/migrations/ ./deployment/config
+	@docker rmi ${LATEST} -f
+	@docker build -t ${NAME} -f Dockerfile ./deployment
+	@rm -rf ./deployment
 	@docker tag ${NAME} ${LATEST}
 
 deploy-heroku:

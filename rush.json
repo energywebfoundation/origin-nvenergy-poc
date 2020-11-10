@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+
+  "rushVersion": "5.30.0",
+
+  "pnpmVersion": "4.14.4",
+
+  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0",
+
+  "projects": [
+    {
+      "packageName": "@energyweb/nvenergy-backend-app",
+      "projectFolder": "packages/backend"
+    },
+
+    {
+      "packageName": "@energyweb/origin-device-nvenergy",
+      "projectFolder": "packages/origin-device-nvenergy"
+    },
+
+    {
+      "packageName": "@energyweb/origin-device-nvenergy-api",
+      "projectFolder": "packages/origin-device-nvenergy-api"
+    },
+
+    {
+      "packageName": "@energyweb/nvenergy-ui",
+      "projectFolder": "packages/origin-ui"
+    }
+  ]
+}

@@ -6,10 +6,11 @@ import {
   AppModule as OriginBackendModule,
   entities as OriginBackendEntities,
 } from "@energyweb/origin-backend";
-import { AppModule as EnergyModule } from "@energyweb/origin-device-nvenergy-api";
+import { EnergyModule } from "@energyweb/origin-device-nvenergy-api";
 import { ISmartMeterReadingsAdapter } from "@energyweb/origin-backend-core";
 import { DynamicModule, Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ConfigModule } from "@nestjs/config";
 
 const OriginAppTypeOrmModule = () => {
   return process.env.DATABASE_URL
@@ -42,6 +43,10 @@ export class OriginAppModule {
     return {
       module: OriginAppModule,
       imports: [
+        ConfigModule.forRoot({
+          envFilePath: "../../.env",
+          isGlobal: true,
+        }),
         OriginAppTypeOrmModule(),
         OriginBackendModule.register(smartMeterReadingsAdapter),
         ExchangeModule,

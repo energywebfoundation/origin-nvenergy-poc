@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@ptt-origin/backend",
+  "name": "@energyweb/nvenergy-backend-app",
   "version": "0.0.1",
   "main": "dist/js/src/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "deploy:heroku": "make build deploy-heroku"
   },
   "bin": {
-    "ptt-backend": "./bin/ptt-backend"
+    "ptt-backend": "./bin/nvenergy-backend"
   },
   "author": "EnergyWeb DevHub GmbH; Joseph Bagaric, joseph.bagaric@energyweb.org;",
   "dependencies": {
@@ -33,11 +33,13 @@
     "class-validator": "0.12.2",
     "ethers": "5.0.8",
     "moment": "2.29.1",
-    "socks-proxy-agent": "5.0.0"
+    "socks-proxy-agent": "5.0.0",
+    "typeorm": "0.2.28"
   },
   "devDependencies": {
     "@nestjs/cli": "7.5.2",
     "typescript": "3.9.7",
-    "ts-node": "8.10.2"
+    "ts-node": "8.10.2",
+    "shx": "0.3.2"
   }
 }

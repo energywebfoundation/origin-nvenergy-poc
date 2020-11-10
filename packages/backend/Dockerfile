@@ -1,17 +1,13 @@
 FROM node:12-alpine
 
-RUN apk --no-cache add make gcc g++ python bash
-RUN npm i -g yarn --force
+RUN apk --no-cache add bash
 
-RUN yarn global add typeorm@0.2.24 && yarn global add pg@8.0.3
+RUN mkdir /var/deployment
+COPY ./ /var/deployment
 
-RUN mkdir /var/migration-config
-COPY config/* /var/migration-config/
+WORKDIR /var/deployment/packages/backend
 
-COPY ${PACKAGE} /tmp
-
-RUN yarn global add file:/tmp/${PACKAGE}
-
-WORKDIR /usr/local/share/.config/yarn/global/node_modules/\@energyweb/
-
-CMD ["/bin/bash","-c", "typeorm migration:run --config exchange/dist/js/ormconfig.js && typeorm migration:run --config origin-backend/dist/js/ormconfig.js && migrations/bin/migrations -c /var/migration-config/demo-config.json -s /var/migration-config/seed.sql && ptt-backend"]
+CMD ["/bin/bash","-c", "node_modules/.bin/typeorm migration:run --config node_modules/@energyweb/exchange/dist/js/ormconfig.js && \
+   node_modules/.bin/typeorm migration:run --config node_modules/@energyweb/origin-backend/dist/js/ormconfig.js && \
+   node_modules/.bin/origin-migrations -c /var/deployment/config/demo-config.json -s/var/deployment/config/seed.sql && \
+   bin/nvenergy-backend"]

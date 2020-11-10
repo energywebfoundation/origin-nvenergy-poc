@@ -1,4 +1,4 @@
-PROJECT				= ptt-origin-ui
+PROJECT				= nv-origin-ui
 
 NAME   				= energyweb/${PROJECT}
 LATEST 				= ${NAME}:latest
