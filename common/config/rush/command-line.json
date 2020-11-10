@@ -1,15 +1,6 @@
-/**
- * This configuration file defines custom commands for the "rush" command-line.
- * For full documentation, please see https://rushjs.io
- */
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/command-line.schema.json",
 
-  /**
-   * Custom "commands" introduce new verbs for the command-line.  To see the help for these
-   * example commands, try "rush --help", "rush my-bulk-command --help", or
-   * "rush my-global-command --help".
-   */
   "commands": [
     {
       "commandKind": "bulk",
@@ -24,13 +15,29 @@
       "commandKind": "global",
       "name": "start:dev",
       "summary": "Runs UI and API in dev mode",
-      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start)\" \"(cd packages/origin-ui && rushx start)\""
+      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start)\" \"(cd packages/origin-ui && rushx start)\"",
+      "safeForSimultaneousRushProcesses": true
     },
     {
       "commandKind": "global",
       "name": "start:prod",
       "summary": "Runs UI and API in prod mode",
-      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start:prod)\" \"(cd packages/origin-ui && rushx start)\""
+      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start:prod)\" \"(cd packages/origin-ui && rushx start)\"",
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "commandKind": "global",
+      "name": "start:ganache",
+      "summary": "Runs Ganache CLI",
+      "shellCommand": "(cd packages/backend && rushx start:ganache)",
+      "safeForSimultaneousRushProcesses": true
+    },
+    {
+      "commandKind": "global",
+      "name": "migrate:dev",
+      "summary": "Runs migrations in prod mode",
+      "shellCommand": "(cd packages/backend && ./run-migrations.sh)",
+      "safeForSimultaneousRushProcesses": true
     }
     // {
     //   /**
