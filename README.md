@@ -27,6 +27,8 @@ rush install
 rush build
 ```
 
+Copy `.env.example` to `.env` and adjust `.env` with your environment specific parameters. 
+
 Create DB
 ```
 psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE origin_nv"
