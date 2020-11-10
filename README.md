@@ -25,6 +25,7 @@ npm i -g pnpm
 ```
 rush install
 rush build
+rush start:dev
 ```
 
 ## Start influxdb
