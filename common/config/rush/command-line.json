@@ -13,15 +13,6 @@
   "commands": [
     {
       "commandKind": "bulk",
-      "name": "start:prod",
-      "summary": "Starts API and UI projects",
-      "safeForSimultaneousRushProcesses": true,
-      "enableParallelism": true,
-      "ignoreMissingScript": true,
-      "allowWarningsInSuccessfulBuild": true
-    },
-    {
-      "commandKind": "bulk",
       "name": "deploy:heroku",
       "summary": "Build and deploy to Heroku",
       "safeForSimultaneousRushProcesses": true,
@@ -31,9 +22,15 @@
     },
     {
       "commandKind": "global",
-      "name": "migrate:all",
-      "summary": "Runs all migrations",
-      "shellCommand": "npx @energyweb/migrations"
+      "name": "start:dev",
+      "summary": "Runs UI and API in dev mode",
+      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start)\" \"(cd packages/origin-ui && rushx start)\""
+    },
+    {
+      "commandKind": "global",
+      "name": "start:prod",
+      "summary": "Runs UI and API in prod mode",
+      "shellCommand": "concurrently -n backend,ui \"(cd packages/backend && rushx start:prod)\" \"(cd packages/origin-ui && rushx start)\""
     }
     // {
     //   /**
