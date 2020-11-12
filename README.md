@@ -18,8 +18,9 @@ Setup the `.env` file with INFLUX DB required items, for more details refer to h
 Install `rush` and `pnpm` if you don't have it:
 
 ```
-npm i -g rush
+npm i -g @microsoft/rush
 npm i -g pnpm
+npm i -g concurrently
 ```
 
 ```
@@ -29,9 +30,22 @@ rush build
 
 Copy `.env.example` to `.env` and adjust `.env` with your environment specific parameters. 
 
+Start Postgres instance
+
+```
+docker pull postgres
+docker run --name origin-postgres -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres
+```
+
 Create DB
 ```
 psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE origin_nv"
+```
+
+Start InfluxDB instance
+
+```
+
 ```
 
 Run ganache and migrations
@@ -43,12 +57,6 @@ rush migrate:dev
 Run UI and API projects
 ```
 rush start:dev
-```
-
-## Start influxdb
-
-```
-docker-compose up
 ```
 
 ### SmartMeterReadsRegistry ABI
