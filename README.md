@@ -44,8 +44,14 @@ psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE origin_nv"
 
 Start InfluxDB instance
 
+Run init script to set credentials and default DB:
+
+```
+./influxdb-init.sh
 ```
 
+```
+./influxdb-run.sh
 ```
 
 Run ganache and migrations
@@ -65,7 +71,9 @@ rush start:dev
 
 ### Swagger API
 
-`yarn start`
+```
+rush start:dev
+```
 
 navigate to `http://localhost:3000/api/#/`
 
