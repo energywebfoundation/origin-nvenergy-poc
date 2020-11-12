@@ -56,6 +56,7 @@ dependencies:
   rxjs: 6.6.3
   sass-loader: 8.0.2_node-sass@4.14.1+webpack@4.44.2
   socks-proxy-agent: 5.0.0
+  solc: 0.5.16
   source-map-loader: 0.2.4
   style-loader: 1.3.0_webpack@4.44.2
   supertest: 4.0.2
@@ -4866,6 +4867,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==
+  /command-exists/1.2.9:
+    dev: false
+    resolution:
+      integrity: sha512-LTQ/SGc+s0Xc0Fu5WaKnR0YiygZkm9eKFvyS+fRsU7/ZWFF8ykFM6Pc9aCVf1+xasOOZpO3BAVgVrKvsqKHV7w==
   /command-line-args/4.0.7:
     dependencies:
       array-back: 2.0.0
@@ -4879,6 +4884,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+  /commander/3.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
   /commander/4.1.1:
     dev: false
     engines:
@@ -7408,6 +7417,16 @@ packages:
     dev: false
     resolution:
       integrity: sha1-i/tVAr3kpNNs/e6gB/zKIdfjgq8=
+  /fs-extra/0.30.0:
+    dependencies:
+      graceful-fs: 4.2.4
+      jsonfile: 2.4.0
+      klaw: 1.3.1
+      path-is-absolute: 1.0.1
+      rimraf: 2.7.1
+    dev: false
+    resolution:
+      integrity: sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=
   /fs-extra/4.0.3:
     dependencies:
       graceful-fs: 4.2.4
@@ -9542,6 +9561,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-KXPvOm8K9IJKFM0bmdn8QXh7udDh1g/giieX0NLCaMnb4hEiVFqnop2ImTXCc5e0/oHz3LTqmHGtExn5hfMkOA==
+  /jsonfile/2.4.0:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.2.4
+    resolution:
+      integrity: sha1-NzaitCi4e72gzIO1P6PWM6NcKug=
   /jsonfile/4.0.0:
     dev: false
     optionalDependencies:
@@ -9745,6 +9770,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-nIeuVSzdCCs6TDPTqI8w1Yre34sSq7AkZ4B3sfOBbI2CgVSB4Du4aLQijFU2+lhAFCwt9+42Hel6lQNIv6AntQ==
+  /klaw/1.3.1:
+    dev: false
+    optionalDependencies:
+      graceful-fs: 4.2.4
+    resolution:
+      integrity: sha1-QIhDO0azsbolnXh4XY6W9zugJDk=
   /kleur/3.0.3:
     dev: false
     engines:
@@ -10357,6 +10388,12 @@ packages:
       node: '>=4.3.0 <5.0.0 || >=5.10'
     resolution:
       integrity: sha512-jA0rdU5KoQMC0e6ppoNRtpp6vjFq6+NY7r8hywnC7V+1Xj/MtHwGIbB1QaK/dunyjWteJzmkpd7ooeWg10T7GA==
+  /memorystream/0.3.1:
+    dev: false
+    engines:
+      node: '>= 0.10.0'
+    resolution:
+      integrity: sha1-htcJCzDORV1j+64S3aUaR93K+bI=
   /meow/3.7.0:
     dependencies:
       camelcase-keys: 2.1.0
@@ -13109,6 +13146,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
+  /require-from-string/2.0.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
   /require-main-filename/2.0.0:
     dev: false
     resolution:
@@ -13885,6 +13928,20 @@ packages:
       npm: '>= 3.0.0'
     resolution:
       integrity: sha512-7LmHN4IHj1Vpd/k8D872VGCHJ6yIVyeFkfIBExRmGPYQ/kdUkpdg9eKh9oOzYYYKQhuxavayJHTnmBG+EzluUA==
+  /solc/0.5.16:
+    dependencies:
+      command-exists: 1.2.9
+      commander: 3.0.2
+      fs-extra: 0.30.0
+      js-sha3: 0.8.0
+      memorystream: 0.3.1
+      require-from-string: 2.0.2
+      semver: 5.7.1
+      tmp: 0.0.33
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-weEtRtisJyf+8UjELs7S4ST1KK7UIq6SRB7tpprfJBL9b5mTrZAT7m4gJKi2h6MiBpuSWfnraK8BnkyWzuTMRA==
   /sort-keys/4.1.0:
     dependencies:
       is-plain-obj: 2.1.0
@@ -16774,6 +16831,7 @@ packages:
     dependencies:
       ethers: 4.0.48
       shx: 0.3.2
+      solc: 0.5.16
       truffle: 5.1.52
       ts-node: 8.10.2_typescript@3.9.7
       typechain: 2.0.1_typescript@3.9.7
@@ -16782,7 +16840,7 @@ packages:
     dev: false
     name: '@rush-temp/origin-device-nvenergy'
     resolution:
-      integrity: sha512-iotVqb6RzNuYSNw2ILJqQhvNzpdyu5AfZX6+BU4X9NZ7XOPsw3EawtfoSTMh5D1paF2ynQOp0AyUCbPCL/SypA==
+      integrity: sha512-nznc3n0TEIaOrMsRIBoyIXdFqv+fiBeuS+nK/0aCAm0pbqti98SSC+ecabLb0JaVdDJrgXLGEz1DKmcCB/TD4Q==
       tarball: 'file:projects/origin-device-nvenergy.tgz'
     version: 0.0.0
   github.com/ethereumjs/ethereumjs-abi/1ce6a1d64235fabe2aaf827fd606def55693508f:
@@ -16853,6 +16911,7 @@ specifiers:
   rxjs: 6.6.3
   sass-loader: 8.0.2
   socks-proxy-agent: 5.0.0
+  solc: 0.5.16
   source-map-loader: 0.2.4
   style-loader: 1.3.0
   supertest: 4.0.2
