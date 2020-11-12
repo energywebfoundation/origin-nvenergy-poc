@@ -9,6 +9,8 @@
 
 Minimal repository for on-chain reads registry and Origin Energy API for NVEnergy project
 
+![CI](https://github.com/energywebfoundation/origin-nvenergy-poc/workflows/CI/badge.svg)
+
 ## How to use
 
 Make sure InfluxDB is running, for more details refer to https://github.com/energywebfoundation/energy-api#influx-db-installation
