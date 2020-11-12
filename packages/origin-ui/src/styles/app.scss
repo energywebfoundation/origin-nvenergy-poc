@@ -17,3 +17,92 @@
   left: 0;
   opacity: 0.25;
 }
+
+body {
+  background-color: $backgroundColorLight !important;
+}
+
+a.active {
+  color: $textColorGrey !important;
+}
+
+div.LoginPage {
+  background: url("../../assets/background-body2.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+div.MuiPaper-root {
+  background-color: $backgroundColorDark;
+  color: $textColorDefault;
+}
+
+div.MuiSelect-root {
+  color: $textColorDefault;
+}
+
+div.Filter {
+  color: $textColorDefault;
+}
+
+div.MuiBox-root span {
+  color: $textColorDefault;
+}
+
+div.PageBody {
+  color: $textColorDefault;
+}
+
+button.MuiButton-containedPrimary span {
+  color: $textColorWhite;
+}
+
+input.MuiFilledInput-input {
+  background-color: $inputBackgroundColor;
+  color: $textColorDefault;
+}
+
+table.MuiTable-root {
+  color: $textColorDefault;
+  background: $backgroundColorDark;
+}
+
+th.MuiTableCell-root {
+  background: $backgroundColorDark;
+}
+
+td.MuiTableCell-root {
+  border-bottom: 1px solid $primaryColor;
+}
+
+tr.MuiTableRow-root {
+  background: $backgroundColorDark;
+}
+
+tr.MuiTableRow-root:nth-child(even) {
+  background: $backgroundColorDarker;
+}
+
+h3.MuiTypography-h3 {
+  color: $textColorDefault;
+}
+
+p.MuiTypography-root {
+  color: $textColorDefault;
+}
+
+span.MuiButton-label {
+  color: $textColorDefault;
+}
+
+span.MuiTableSortLabel-root {
+  color: $textColorDefault;
+}
+
+span.MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: $textColorDefault;
+}
