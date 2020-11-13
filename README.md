@@ -79,23 +79,10 @@ rush start:dev
 
 navigate to `http://localhost:3000/api/#/`
 
+## Heroku deployment script
 
-### Try it
-
-Run a RPC on `http://localhost:8545` or set env variable `WEB3` to the RPC endpoint.
-
-1. Get salt for smart meter reading: GET `http://localhost:3001/meter-read/salt`
-
-  You should get a response like: `{"id":0,"salt":"0x43917c1054e07bb874618ef02922a799"}`
-
-2. Store a meter read: POST `http://localhost:3001/meter-read` with json body:
+This repo has a script for easy Heroku deployments for UI And API project. Script assumes that Heroku applications are already created and Postgres DB is provisioned.
 
 ```
-{
-  "saltId": 0,
-  "meterRead": "120",
-  "meterAddress": "0xbF1c090D78ea98e9366b9b97b07238e8C0330120",
-  "transactionHash": "0x8a7c394168143d79c6ef4a864f6807ae2dd640c2950296bfb2ccdd266bac8431",
-  "signature": "0x3b2e11497b15b95ac5ede6fdd272b3c3b4095710879eb2eb746c3ef9131fc3d41f15742af2dbb1023896592f329b55d3023afda515b5b54a085dc3706354687f01"
-}
+HEROKU_API_KEY=<APIKEY> HEROKU_STABLE_APP_API=<APP_NAME> HEROKU_STABLE_APP_UI=<APP_NAME> rush deploy:heroku
 ```
