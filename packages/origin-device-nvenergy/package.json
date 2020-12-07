@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "truffle": "5.1.52",
-    "ts-node": "8.10.2",
+    "ts-node": "9.1.1",
     "typechain": "2.0.1",
     "typechain-target-ethers": "1.0.4",
     "typescript": "3.9.7",
