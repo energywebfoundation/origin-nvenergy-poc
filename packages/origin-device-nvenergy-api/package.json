@@ -48,7 +48,7 @@
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-import": "2.22.1",
     "ganache-core": "2.13.1",
-    "jest": "24.9.0",
+    "jest": "27.0.4",
     "prettier": "1.19.1",
     "supertest": "4.0.2",
     "ts-jest": "24.3.0",
