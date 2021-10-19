@@ -33,7 +33,7 @@
     "@nestjs/typeorm": "7.1.4",
     "axios": "0.21.0",
     "class-validator": "0.12.2",
-    "ethers": "5.0.8",
+    "ethers": "5.4.7",
     "moment": "2.29.1",
     "socks-proxy-agent": "5.0.0",
     "typeorm": "0.2.28"
