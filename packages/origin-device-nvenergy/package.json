@@ -21,7 +21,7 @@
     "solc": "0.5.16"
   },
   "dependencies": {
-    "ethers": "4.0.48",
+    "ethers": "5.4.7",
     "shx": "^0.3.2"
   }
 }
